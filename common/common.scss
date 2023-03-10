@@ -1,0 +1,57 @@
+// .chat-drawer-outlet-container {
+//   max-height: calc(100% - var(--header-offset));
+//   right: 0px;
+// }
+
+.chat-drawer.is-expanded {
+  .chat-drawer-container {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+body.has-sidebar-page.chat-drawer-expanded .d-header>.wrap .contents {
+  grid-template-areas: "sidebar extra-info extra-info rspace panel";
+}
+
+.desktop-view {
+  .discourse-root {
+    display: grid;
+    grid-template-areas: 'header header' 'content chat';
+    grid-template-columns: 1fr 25%;
+  }
+
+  body.has-sidebar-page .wrap {
+    max-width: unset;
+  }
+
+  .d-header-wrap {
+    grid-area: header;
+  }
+
+  #main-outlet-wrapper {
+    grid-area: content;
+  }
+
+  .chat-drawer-outlet {
+    grid-area: chat;
+  }
+
+  .chat-drawer-outlet-container {
+    position: sticky;
+    top: var(--header-offset);
+  }
+
+  .chat-drawer {
+    height: calc(100vh - var(--header-offset)) !important;
+    width: 100%;
+  }
+
+  .chat-drawer .chat-drawer-container {
+    box-shadow: none;
+  }
+}
+
+.chat-drawer-header__expand-btn {
+  display: none;
+}
